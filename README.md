@@ -34,7 +34,7 @@ For example, if you flashed bootloader `optiboot_flash_atmega328p_250000_8MHZ.he
  
 ## Pre defined boards
 
-Some boards with LoRa RFM95 module have the pin definition so you can use it in your sketch, for example LMIC stack
+Some boards with LoRa RFM95 module have the pin definition so you can use it in your sketch. If you select the correct board in Arduino IDE you don't need to take care of the values, just use the defined constants, for example LMIC stack
 
 
 ```cpp
@@ -46,7 +46,22 @@ lmic_pinmap lmic_pins = {
 };
 ```
 
-Like that, you don't need to change sketch whatever board you use for LoRa pinout. Here are below the pins definition for each board
+Also you can check at compile time the board used (selected in Arduino IDE)
+
+```cpp
+#if defined (AVR_MINILORA) 
+// Blah Blah 
+#elif defined (AVR_LORADUINO)
+// Blah Blah 
+#elif defined (AVR_LORARADIONODE)
+// Blah Blah 
+#else
+#error "Unknown board selected"
+#endif 
+```
+
+
+Like that, you don't need to change sketch whatever board you use for LoRa pinout. Here are below the pins definition made for each board
 
 ### Mini LoRa
 

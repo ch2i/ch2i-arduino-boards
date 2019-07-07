@@ -253,14 +253,13 @@ const uint8_t PROGMEM digital_pin_to_timer_PGM[] = {
 
 
 // Specific LoraDuino
-
 #ifdef LED_BUILTIN 
 #undef LED_BUILTIN 
 #endif
 #define LED_BUILTIN 7
-#define LED_RED 7
-#define LED_GRN 7
-#define LED_BLU 7
+#define LED_RED LED_BUILTIN
+#define LED_GRN LED_BUILTIN
+#define LED_BLU LED_BUILTIN
 
 //#define BAT_ENABLE A3
 #define BAT_ANALOG A7

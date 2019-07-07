@@ -11,10 +11,13 @@ Your board should have the bootloader already flashed, it's not the scope of thi
 
 Click on the "Download ZIP" button in the upper right corner. Exctract the ZIP file, and move the extracted folder to the location "**~/Documents/Arduino/hardware**". Create the "hardware" folder if it doesn't exist.
 
-After extraction, you should have something like "**~/Documents/Arduino/hardware/ch2i-arduino-boards-master**", of course you can rename folder to "**~/Documents/Arduino/hardware/ch2i**"
-Open Arduino IDE, and a new category in the boards menu called "CH2i Boards" will show up.
+This folder should match the one you setup into Arduino IDE preference, for example, setup in my IDE for Sketchbook Location is `D:\devt\Arduino` so I need to extract zip in `D:\devt\Arduino\hardware`
 
-## Getting started with MiniCore
+After extraction, you should have something like `D:\devt\Arduino\hardware\ch2i-arduino-boards-master`, of course you can rename folder to `D:\devt\Arduino\hardware\CH2i`
+
+Then, open Arduino IDE, and a new category in the boards menu called "CH2i Boards" will show up.
+
+## Getting started 
 
 Ok, so you're downloaded and installed, ready to upload but how to get started? Here's a quick guide:
 
@@ -24,8 +27,8 @@ Ok, so you're downloaded and installed, ready to upload but how to get started? 
 
 For example, if you flashed bootloader `optiboot_flash_atmega328p_250000_8MHZ.hex`
 
- * select 250KBps for serial speed
- * slect 8MHz for Clock
-
+* select 8MHz for Clock
+* select 250KBps for serial speed
+ 
 
 

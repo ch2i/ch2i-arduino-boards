@@ -3,6 +3,8 @@
 An Arduino core for some of my custom boards such has [Mini-Lora](https://github.com/hallard/Mini-LoRa) that have been optimized with optiboot bootloader and different serial speed to increase and improve uploading.
 This requires at least Arduino IDE v1.6.2, where v1.8.6+ is recommended. 
 
+Also some of the boards have RFM95 LoRa module build in so constants pins are defined so you won't bother looking are the connection when coding. See section Pre defined boards
+
 
 ## Bootloader 
 Your board should have the bootloader already flashed, it's not the scope of this repo. Everything to burn bootloader is explained [here](https://github.com/hallard/Pro-Mini-ICSP-FTDI)
@@ -30,5 +32,71 @@ For example, if you flashed bootloader `optiboot_flash_atmega328p_250000_8MHZ.he
 * select 8MHz for Clock
 * select 250KBps for serial speed
  
+## Pre defined boards
+
+Some boards with LoRa RFM95 module have the pin definition so you can use it in your sketch, for example LMIC stack
+
+
+```cpp
+lmic_pinmap lmic_pins = {
+    .nss = LORA_CS,
+    .rxtx = LMIC_UNUSED_PIN,
+    .rst = LORA_RESET,
+    .dio = {LORA_DIO0, LORA_DIO1, LORA_DIO2},
+};
+```
+
+Like that, you don't need to change sketch whatever board you use for LoRa pinout. Here are below the pins definition for each board
+
+### Mini LoRa
+
+<img src="https://raw.githubusercontent.com/hallard/Mini-LoRa/master/pictures/Mini-LoRa-FrontBig.jpg" alt="Mini LoRa">
+
+```cpp
+#define LED_BUILTIN 13
+#define LED_RED     9
+#define LED_GRN     6
+#define LED_BLU     5
+#define LED_PWM
+
+#define BTN_ACTION 3
+
+#define LORA_DIO0  2
+#define LORA_DIO1  7
+#define LORA_DIO2  8
+#define LORA_RESET 9
+#define LORA_CS    SS
+```
+
+### LoRa Radio Node
+
+<img src="https://github.com/ch2i/ch2i-arduino-boards/raw/master/LoRa-Radio-Node.jpg" alt="LoRa Radio Node">
+
+```cpp
+#define LED_BUILTIN 13
+#define LORA_DIO0  2
+#define LORA_DIO1  5
+#define LORA_DIO2  6
+#define LORA_DIO3  7
+#define LORA_DIO5  8
+#define LORA_RESET 9
+#define LORA_CS    SS
+```
+
+### LoRaDuino from electrodragon
+
+<img src="https://github.com/ch2i/ch2i-arduino-boards/raw/master/LoRa-Duino.jpg" alt="LoRaDuino">
+
+```cpp
+#define LED_BUILTIN 7
+#define BAT_ANALOG A7
+#define BTN_ACTION 5
+#define FLASH_CS   8
+#define LORA_DIO0  2
+#define LORA_DIO1  4
+#define LORA_RESET 9
+#define LORA_CS    SS
+```
+
 
 

@@ -116,3 +116,45 @@ atmega328p_loraduino.bootloader.lock_bits=0xcF
 atmega328p_loraduino.bootloader.tool=arduino:avrdude
 atmega328p_loraduino.bootloader.file=atmega/ATmegaBOOT_168_atmega328_pro_8MHz.hex
 
+#####################################################
+#           Optiboot 8MHz/16Mhz 250Kb/1Mb           #
+#    bootloader for  ATMega328p running up 1MBPS    #
+#####################################################
+
+atmega328p_loraradionode.name=LoRa Radio Node (ATmega328p)
+
+atmega328p_loraradionode.menu.clock.8MHz=8 MHz
+atmega328p_loraradionode.menu.clock.8MHz.build.f_cpu=8000000L
+atmega328p_loraradionode.menu.clock.16MHz=16 MHz
+atmega328p_loraradionode.menu.clock.16MHz.build.f_cpu=16000000L
+atmega328p_loraradionode.menu.clock.16MHzAt8MHz=8MHz (Crystal 16MHz)
+atmega328p_loraradionode.menu.clock.16MHzAt8MHz.build.f_cpu=8000000L
+atmega328p_loraradionode.menu.clock.16MHzAt8MHz.build.extra_flags=-DCLOCK_DIV_2
+
+atmega328p_loraradionode.menu.upload.250K=250 KBps
+atmega328p_loraradionode.menu.upload.250K.upload.speed=250000
+atmega328p_loraradionode.menu.upload.1M=1 MBps
+atmega328p_loraradionode.menu.upload.1M.upload.speed=1000000
+atmega328p_loraradionode.menu.upload.115K=115200 Bps
+atmega328p_loraradionode.menu.upload.115K.upload.speed=115200
+atmega328p_loraradionode.menu.upload.57K=57600 Bps
+atmega328p_loraradionode.menu.upload.57K.upload.speed=57600
+
+atmega328p_loraradionode.upload.tool=arduino:avrdude
+atmega328p_loraradionode.upload.protocol=arduino
+atmega328p_loraradionode.upload.maximum_size=32256
+atmega328p_loraradionode.upload.maximum_data_size=2048
+
+atmega328p_loraradionode.build.mcu=atmega328p
+atmega328p_loraradionode.build.core=arduino:arduino
+atmega328p_loraradionode.build.board=AVR_LORARADIONODE
+atmega328p_loraradionode.build.variant=loraradionode
+
+atmega328p_loraradionode.bootloader.low_fuses=0xFF
+atmega328p_loraradionode.bootloader.high_fuses=0xde
+atmega328p_loraradionode.bootloader.extended_fuses=0x06
+atmega328p_loraradionode.bootloader.path=optiboot
+atmega328p_loraradionode.bootloader.unlock_bits=0x3F
+atmega328p_loraradionode.bootloader.lock_bits=0xcF
+atmega328p_loraradionode.bootloader.tool=arduino:avrdude
+atmega328p_loraradionode.bootloader.file=minilora/optiboot_flash_{build.mcu}_{upload.speed}Bps_{build.f_cpu}.hex

@@ -89,6 +89,8 @@ Like that, you don't need to change sketch whatever board you use for LoRa pinou
 
 ```cpp
 #define LED_BUILTIN 13
+// Take care DIO pins are not connected to Digital Pin
+// by default, you need to solder the one needed on connector
 #define LORA_DIO0  2
 #define LORA_DIO1  5
 #define LORA_DIO2  6

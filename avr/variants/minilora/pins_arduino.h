@@ -253,6 +253,9 @@ const uint8_t PROGMEM digital_pin_to_timer_PGM[] = {
 
 
 // Specific Mini Lora
+#ifdef LED_BUILTIN
+#define LED_ON_BOARD LED_BUILTIN
+#endif
 
 #define LED_RED     9
 #define LED_GRN     6

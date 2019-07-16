@@ -1,6 +1,7 @@
 .gitignore
 *.elf
 
+stm32l0/
 
 # =========================
 # Operating System Files

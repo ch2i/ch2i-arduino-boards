@@ -2,6 +2,9 @@
 menu.cpu=Processor
 menu.clock=Clock
 menu.upload=Upload Speed
+menu.tpldone=TPL511x DONE Pin
+menu.tpldrv=TPL511x DRV Pin
+menu.mcp24aa=Microchip 24AA02E64
 
 ######################################################
 #            Optiboot 8MHz/16Mhz 250Kb/1Mb           #
@@ -42,6 +45,7 @@ atmega1284p.bootloader.file=mega1284p/optiboot_flash_{build.mcu}_{build.f_cpu}_{
 #####################################################
 #           Optiboot 8MHz/16Mhz 250Kb/1Mb           #
 #    bootloader for  ATMega328p running up 1MBPS    #
+#       https://github.com/hallard/Mini-LoRa        #
 #####################################################
 
 atmega328p_minilora.name=Mini Lora (ATmega328p)
@@ -63,6 +67,35 @@ atmega328p_minilora.menu.upload.115K.upload.speed=115200
 atmega328p_minilora.menu.upload.57K=57600 Bps
 atmega328p_minilora.menu.upload.57K.upload.speed=57600
 
+
+atmega328p_minilora.menu.mcp24aa.nomcp=No
+atmega328p_minilora.menu.mcp24aa.nomcp.build.extra_flags=
+atmega328p_minilora.menu.mcp24aa.hasmcp=Yes
+atmega328p_minilora.menu.mcp24aa.hasmcp.build.extra_flags=-DMCP_24AA02E64
+
+atmega328p_minilora.menu.tpldone.none=None
+atmega328p_minilora.menu.tpldone.none.build.extra_flags=
+atmega328p_minilora.menu.tpldone.pina1=A1
+atmega328p_minilora.menu.tpldone.pina1.build.extra_flags=-DTPL_DONE=A1
+atmega328p_minilora.menu.tpldone.pina2=A2
+atmega328p_minilora.menu.tpldone.pina2.build.extra_flags=-DTPL_DONE=A2
+atmega328p_minilora.menu.tpldone.pina3=A3
+atmega328p_minilora.menu.tpldone.pina3.build.extra_flags=-DTPL_DONE=A3
+atmega328p_minilora.menu.tpldone.pind4=D4
+atmega328p_minilora.menu.tpldone.pind4.build.extra_flags=-DTPL_DONE=D4
+
+atmega328p_minilora.menu.tpldrv.none=None
+atmega328p_minilora.menu.tpldrv.none.build.extra_flags=
+atmega328p_minilora.menu.tpldrv.pina1=A1
+atmega328p_minilora.menu.tpldrv.pina1.build.extra_flags=-DTPL_DONE=A1
+atmega328p_minilora.menu.tpldrv.pina2=A2
+atmega328p_minilora.menu.tpldrv.pina2.build.extra_flags=-DTPL_DONE=A2
+atmega328p_minilora.menu.tpldrv.pina3=A3
+atmega328p_minilora.menu.tpldrv.pina3.build.extra_flags=-DTPL_DONE=A3
+atmega328p_minilora.menu.tpldrv.pind4=D4
+atmega328p_minilora.menu.tpldrv.pind4.build.extra_flags=-DTPL_DONE=D4
+
+
 atmega328p_minilora.upload.tool=arduino:avrdude
 atmega328p_minilora.upload.protocol=arduino
 atmega328p_minilora.upload.maximum_size=32256
@@ -82,9 +115,11 @@ atmega328p_minilora.bootloader.lock_bits=0xcF
 atmega328p_minilora.bootloader.tool=arduino:avrdude
 atmega328p_minilora.bootloader.file=minilora/optiboot_flash_{build.mcu}_{upload.speed}Bps_{build.f_cpu}.hex
 
+
 #####################################################
 #            loraduino 3V3 8MHz 57600               #
 #   bootloader arduino pro mini  running up 57600   #
+#    from http://www.electrodragon.com              #
 #####################################################
 
 atmega328p_loraduino.name=Loraduino (ATmega328p)
@@ -119,6 +154,7 @@ atmega328p_loraduino.bootloader.file=atmega/ATmegaBOOT_168_atmega328_pro_8MHz.he
 #####################################################
 #           Optiboot 8MHz/16Mhz 250Kb/1Mb           #
 #    bootloader for  ATMega328p running up 1MBPS    #
+# ebay for 'LoRa Radio Node' (blue with bat holder) #
 #####################################################
 
 atmega328p_loraradionode.name=LoRa Radio Node (ATmega328p)
